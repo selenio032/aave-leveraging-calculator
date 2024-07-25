@@ -66,22 +66,29 @@ To clone the Aave Leveraging Calculator repository, follow these steps:
 2. Navigate to the directory where you want to clone the repository.
 3. Run the following command:
    ```sh
-   git remote add origin git@github.com:selenio032/aave-leverage-calculator.git
-   ```
-4. To activate the virtual environment, run:
-   ```sh
-   pipenv shell
+   git clone git@github.com:selenio032/aave-leverage-calculator.git
    ```
 
 ### Configuration
 
 Before running the project, you may need to adjust some parameters to suit your specific needs. Open the ./aave_leveraging_calculator/constants.py file and modify the parameters as required.
 
+1. Open your terminal or command prompt on the folder you cloned the project
+2. Install packages:
+   ```sh
+   pipenv install
+   ```
+
 ### Running the Project
 
 After installing all the dependencies, you can run the project. Make sure you are in the virtual environment.
 
-1. Run the following command to start the application:
+1. Open your terminal or command prompt on the folder you cloned the project
+2. Activate the virtual environment:
+   ```sh
+   pipenv shell
+   ```
+3. Run the following command to start the application:
    ```sh
    python main.py
    ```

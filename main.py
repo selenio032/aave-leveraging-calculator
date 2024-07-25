@@ -19,7 +19,7 @@ def main():
     )
 
     token_amount_supplied = max_collateral / TOKEN_CURRENT_PRICE
-    token_liquidation_price = AAVE_LIQ_LTV * max_borrow / token_amount_supplied
+    token_liquidation_price = max_borrow / (token_amount_supplied * AAVE_LIQ_LTV)
 
     profits_target = (
         (TOKEN_TARGET_PRICE * token_amount_supplied) - max_borrow - collateral_amount

@@ -21,6 +21,8 @@ def main():
     token_amount_supplied = max_collateral / TOKEN_CURRENT_PRICE
     token_liquidation_price = max_borrow / (token_amount_supplied * AAVE_LIQ_LTV)
 
+    total_leverage = token_amount_supplied / INITIAL_TOKEN_AMOUNT
+
     profits_target = (
         (TOKEN_TARGET_PRICE * token_amount_supplied) - max_borrow - collateral_amount
     )
@@ -34,9 +36,13 @@ def main():
 
     data = [
         ["Loop operations", loop_count],
-        ["Max collateral", f"${max_collateral:.2f}"],
+        [
+            f"Max collateral at {TOKEN_TICKER} price = ${TOKEN_TARGET_PRICE:.2f}",
+            f"${max_collateral:.2f}",
+        ],
         ["Max borrow", f"${max_borrow:.2f}"],
         [f"{TOKEN_TICKER} supplied", f"{token_amount_supplied:.3f}"],
+        [f"Total leverage", f"{total_leverage:.3f}"],
         [
             f"{TOKEN_TICKER} liquidation price",
             f"${token_liquidation_price:.2f}",
